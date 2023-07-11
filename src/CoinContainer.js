@@ -7,7 +7,7 @@ class CoinContainer extends Component {
         coins: [{side: 'heads', 
         imgSrc:'https://tinyurl.com/react-coin-heads-jpg'},
         {side: 'tails', 
-        imgSrc:'https://tinyurl.com/react-coin-tails-jpg'}]
+        imgSrc:'https://media.geeksforgeeks.org/wp-content/uploads/20200916123125/tails-200x200.jpg'}]
     }
     constructor(props){
         super(props);
