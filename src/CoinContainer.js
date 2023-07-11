@@ -25,7 +25,10 @@ class CoinContainer extends Component {
         this.setState(st => {
             return {
                 currCoin: newCoin,
-                nFlips: st.nFlips + 1
+                nFlips: st.nFlips + 1,
+                nHeads: st.nHeads + (newCoin.side === "heads" ? 1: 0),
+                nTails: st.nTails + (newCoin.side === "tails" ? 1: 0)
+              
             }
         })
     }
@@ -39,8 +42,8 @@ class CoinContainer extends Component {
             <div className="CoinContainer">
                 <h1>Lets flip a coin</h1>
                 <button onClick={this.handleClick} >Flip me!</button>
-                <p>Out of {this.state.nFlips} flips, there have been 
-                {this.state.nHeads}
+                <p>Out of {this.state.nFlips} flips, there have been  {""}
+                {this.state.nHeads} {""}
                 heads and {this.state.nTails} tails</p>
             </div>
         )
