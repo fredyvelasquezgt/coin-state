@@ -41,6 +41,7 @@ class CoinContainer extends Component {
         return (
             <div className="CoinContainer">
                 <h1>Lets flip a coin</h1>
+                {this.state.currCoin && <Coin  info={this.state.currCoin}/>}
                 <button onClick={this.handleClick} >Flip me!</button>
                 <p>Out of {this.state.nFlips} flips, there have been  {""}
                 {this.state.nHeads} {""}
