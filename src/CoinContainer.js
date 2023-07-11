@@ -3,17 +3,28 @@ import Coin from './Coin'
 
 class CoinContainer extends Component {
     static defaultProps = {
-        title:"Lets flip a coin"
+        coins: [{side: 'heads', 
+        imgSrc:'https://tinyurl.com/react-coin-heads-jpg'},
+        {side: 'tails', 
+        imgSrc:'https://tinyurl.com/react-coin-tails-jpg'}]
     }
     constructor(props){
-        super(props)
-
+        super(props);
+        this.state = {
+            currCoin: null,
+            nFlips: 0,
+            nHeads: 0,
+            nTails: 0
+        }
     }
 
     render() {
         return (
-            <div>
-                <Coin title={this.props.title} />
+            <div className="CoinContainer">
+                <h1>Lets flip a coin</h1>
+                <p>Out of {this.state.nFlips} flips, there have been 
+                {this.state.nHeads}
+                heads and {this.state.nTails} tails</p>
             </div>
         )
     }
